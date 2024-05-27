@@ -4,7 +4,7 @@
 class BloomFilter:
 
     def __init__(self) -> None:
-        """Initialization."""
+        """Initialize the bloom filter."""
         pass
     pass
 
