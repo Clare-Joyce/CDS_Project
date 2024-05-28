@@ -34,6 +34,7 @@ class BloomFilter:
         pass
 
     
-    def calculate_no_hash_functions(self):
+    def calculate_no_hash_functions(self, size_of_bit, length_of_element):
         """Calculates the optimal number of hash functions."""
         pass
+        
