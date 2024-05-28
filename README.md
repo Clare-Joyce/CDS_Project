@@ -35,4 +35,5 @@ A bloom filter is a space-efficient probabilistic data structure used for checki
 ## Results
 
 ## Resources
-* https://brilliant.org/wiki/bloom-filter/ 
+* https://brilliant.org/wiki/bloom-filter/
+* https://www.geeksforgeeks.org/bloom-filters-introduction-and-python-implementation/
