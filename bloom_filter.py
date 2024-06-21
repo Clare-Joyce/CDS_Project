@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 from typing import Any
-=======
 import math
->>>>>>> Remove print statement
 
 
 class BloomFilter:
