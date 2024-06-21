@@ -1,5 +1,6 @@
 from typing import Any
 import math
+import mmh3
 
 
 class BloomFilter:
@@ -17,8 +18,10 @@ class BloomFilter:
         # Define the filter capacity
         self.capacity = capacity
         self.false_positive_rate = false_positive_rate
+        self.num_hash_functions = self.calculate_bit_array_size(capacity, false_positive_rate)
+        self.bit_array_size = self.optimal_hash_functions(capacity, false_positive_rate)
         # Set all cells to False
-        self.bit_array = [False]  * capacity
+        self.bit_array = [False]  * self.bit_array_size
 
 
     def insert(self, item):
@@ -51,7 +54,7 @@ class BloomFilter:
         return size_of_bit
 
     @staticmethod
-    def optimal_hash_functions(size_of_bit, capacity):
+    def optimal_hash_functions(capacity, false_positive_rate):
         """Calculates the optimal number of hash functions for the filter.
 
         Args:
@@ -62,5 +65,6 @@ class BloomFilter:
             An integer representing the optimal number of hash functions 
                 to calculate the hash value.
         """
-        no_of_hash_functions = int((size_of_bit/capacity) * math.log(2))
+        bit_array_size = BloomFilter.calculate_bit_array_size(capacity, false_positive_rate)
+        no_of_hash_functions = int((bit_array_size/capacity) * math.log(2))
         return no_of_hash_functions
