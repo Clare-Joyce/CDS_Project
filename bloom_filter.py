@@ -25,7 +25,14 @@ class BloomFilter:
 
 
     def insert(self, element: Any):
-        """Adds an element to the filter."""
+        """Adds an element to the filter.
+        
+        Args:
+            element (Any): The element to hash
+        
+        Returns:
+            None. Sets several bits to True
+        """
         for i in range(self.num_hash_functions):
             index = self.hash_function(element, i) % self.bit_array_size
             self.bit_array[index] = True
@@ -41,7 +48,7 @@ class BloomFilter:
         Apply a hash function to an element.
         
         Args:
-            item (str): The item to hash.
+            element (str): The element to hash.
             seed (int): The seed for the hash function.
         
         Returns:
