@@ -1,4 +1,5 @@
 from typing import Any
+import math
 
 
 class BloomFilter:
@@ -33,7 +34,33 @@ class BloomFilter:
     def hash_function(self):
         pass
 
-    
-    def calculate_no_hash_functions(self):
-        """Calculates the optimal number of hash functions."""
-        pass
+
+    @staticmethod
+    def calculate_bit_array_size(capacity, false_positive_rate):
+        """Calculates the optimal bit array size for the filter.
+
+        Args:
+            capcacity (int): Number of elements the filter can hold
+            false_positive_rate (float): User defined accepatble value 
+                for false positive rate
+
+        Returns:
+            An integer representing the size of the bit array calculated with the function.   
+        """
+        size_of_bit = int(-(capacity * math.log(false_positive_rate)) / (math.log(2) ** 2))
+        return size_of_bit
+
+    @staticmethod
+    def optimal_hash_functions(size_of_bit, capacity):
+        """Calculates the optimal number of hash functions for the filter.
+
+        Args:
+            size_of_bit (int): 
+            capacity (int): Number of elements the filter can hold
+        
+        Returns:
+            An integer representing the optimal number of hash functions 
+                to calculate the hash value.
+        """
+        no_of_hash_functions = int((size_of_bit/capacity) * math.log(2))
+        return no_of_hash_functions
