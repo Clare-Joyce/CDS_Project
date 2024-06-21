@@ -54,6 +54,17 @@ class BloomFilter:
                 return False
         return True
 
+    def __contains__(self, element: Any) -> bool:
+        """Allows usage of 'in' keyword to check membership.
+
+        Args:
+            element (Any): The element to be checked.
+
+        Returns:
+            bool: True if the element is probably in the filter, False otherwise.
+        """
+        return self.check(element)
+
     
     def hash_function(self, element: str, seed: int) -> int:
         """
