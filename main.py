@@ -20,7 +20,7 @@ def parse_arguments():
     parser.add_argument("--m", default=0, type=int, required=False,
                         help="Size of the bit array")
     parser.add_argument("--k", default=0, type=int, required=False,
-                        help="Number pf hash functions.")
+                        help="Maximum number pf hash functions.")
     parser.add_argument("--data_type", type=str, choices=["words", "dna"],
                         required=True,
                         help="Type of data to use for benchmarking: 'words' or 'dna'.")
@@ -93,3 +93,4 @@ def process(cap, fpr, data_type, seq_len):
     df.to_csv(f"dataframe_{data_type}_{cap}.csv")
 
     return df
+
