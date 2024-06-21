@@ -24,9 +24,10 @@ class BloomFilter:
         self.bit_array = [False]  * self.bit_array_size
 
 
-    def insert(self, item):
+    def insert(self, element: Any):
         """Adds an element to the filter."""
         pass
+
 
 
     def check(self):
@@ -34,8 +35,18 @@ class BloomFilter:
         pass
 
 
-    def hash_function(self):
-        pass
+    def hash_function(self, element: str, seed: int) -> int:
+        """
+        Apply a hash function to an element.
+        
+        Args:
+            item (str): The item to hash.
+            seed (int): The seed for the hash function.
+        
+        Returns:
+            int: The hash value.
+        """
+        return mmh3.hash(element, seed)
 
 
     @staticmethod
