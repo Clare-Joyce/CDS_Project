@@ -22,6 +22,7 @@ A bloom filter is a space-efficient probabilistic data structure used for checki
 
 ## Understanding How Bloom Filters Work
 
+Imagine a canvas with several 
 
 ## Code Structure for the implementation
 
