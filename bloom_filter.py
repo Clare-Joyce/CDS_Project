@@ -34,3 +34,9 @@ class BloomFilter:
     def hash_function(self):
         pass
 
+
+    @staticmethod
+    def calculate_bit_array_size(capacity, false_positive_rate):
+        """Calculates the optimal bit array size for the filter."""
+        size_of_bit = int(-(capacity * math.log(false_positive_rate)) / (math.log(2) ** 2))
+        return size_of_bit
