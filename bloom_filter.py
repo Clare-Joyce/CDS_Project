@@ -66,7 +66,8 @@ class BloomFilter:
         return self.check(element)
 
     
-    def hash_function(self, element: str, seed: int) -> int:
+    @staticmethod
+    def hash_function(element: str, seed: int) -> int:
         """
         Apply a hash function to an element.
         
