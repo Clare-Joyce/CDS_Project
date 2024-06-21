@@ -30,7 +30,8 @@ def parse_arguments():
     return parser.parse_args()
 
 def calculate_compression_rate(m: int, n: int) -> float:
-    """Calculate the compression rate of a Bloom filter.
+    """
+Calculate the compression rate of a Bloom filter.
 
     Args:
         m (int): Size of the bit array (number of bits).
@@ -66,3 +67,29 @@ def calculate_false_positive_rate(m: int, k: int, n: int) -> float:
 
     return false_positive_rate
 
+def process(cap, fpr, data_type, seq_len):
+    """"""
+    results = []
+    for i in range(1, cap, 5):
+        bf = BloomFilter(i, fpr)
+        if data_type =="dna":
+            items = generate_multiple_dna_sequences(i, seq_len)
+        if data_type == "words":
+            items = random_word_generator(i)
+        start_time = time.time()
+        for item in items:
+            bf.insert(item)
+        insertion_time = time.time() - start_time
+
+        start_time = time.time()
+        for item in items:
+            bf.check(item)
+        checking_time = time.time() - start_time
+
+        fpr_new = calculate_false_positive_rate(bf.m, bf.k, i)
+        cpr = calculate_compression_rate(bf.m, i)
+        results.append((i, insertion_time, checking_time, fpr_new, cpr))
+    df = pd.DataFrame(results, columns=["capacity", "insertion_time", "checking_time", "fpr", "cpr"])
+    df.to_csv(f"dataframe_{data_type}_{cap}.csv")
+
+    return df
