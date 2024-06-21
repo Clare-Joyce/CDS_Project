@@ -28,7 +28,7 @@ class BloomFilter:
         """Adds an element to the filter.
         
         Args:
-            element (Any): The element to hash
+            element (str): The element to hash
         
         Returns:
             None. Sets several bits to True
@@ -42,14 +42,14 @@ class BloomFilter:
         """Checks if an element exists in the filter.
         
         Args:
-            element (Any): The element to be checked in the bloom filter.
+            element (str): The element to be checked in the bloom filter.
 
         Returns:
             bool: True if the element is probably in the filter, False if
                 the element is definitely not in the filter.
         """
         for i in range(self.num_hash_functions):
-            index = self.hash_function(str(element), i) % self.bit_array_size
+            index = self.hash_function(element, i) % self.bit_array_size
             if not self.bit_array[index]:
                 return False
         return True
@@ -58,7 +58,7 @@ class BloomFilter:
         """Allows usage of 'in' keyword to check membership.
 
         Args:
-            element (Any): The element to be checked.
+            element (str): The element to be checked.
 
         Returns:
             bool: True if the element is probably in the filter, False otherwise.
@@ -76,7 +76,7 @@ class BloomFilter:
             seed (int): The seed for the hash function.
         
         Returns:
-            int: The hash value.
+            An integer representing the hash value.
         """
         return mmh3.hash(element, seed)
 
