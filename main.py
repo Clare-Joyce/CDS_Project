@@ -28,3 +28,16 @@ def parse_arguments():
                         help="Number of DNA sequences to generate.")
 
     return parser.parse_args()
+
+def calculate_compression_rate(m: int, n: int) -> float:
+    """Calculates the compression rate of a Bloom filter.
+
+    Args:
+        m (int): Size of the bit array (number of bits).
+        n (int): Number of elements inserted into the filter.
+
+    Returns:
+        A float,  the compression rate.
+    """
+    compression_rate = (m * math.log(2)) / n
+    return compression_rate
