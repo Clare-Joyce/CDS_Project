@@ -24,7 +24,7 @@ class BloomFilter:
         self.bit_array = [False]  * self.bit_array_size
 
 
-    def insert(self, element: Any):
+    def insert(self, element: str):
         """Adds an element to the filter.
         
         Args:
@@ -38,7 +38,7 @@ class BloomFilter:
             self.bit_array[index] = True
 
 
-    def check(self, element: Any):
+    def check(self, element: str):
         """Checks if an element exists in the filter.
         
         Args:
@@ -54,7 +54,7 @@ class BloomFilter:
                 return False
         return True
 
-    def __contains__(self, element: Any) -> bool:
+    def __contains__(self, element: str) -> bool:
         """Allows usage of 'in' keyword to check membership.
 
         Args:
