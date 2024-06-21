@@ -38,11 +38,23 @@ class BloomFilter:
             self.bit_array[index] = True
 
 
-    def check(self):
-        """Checks if an element exists in the filter."""
-        pass
+    def check(self, element: Any):
+        """Checks if an element exists in the filter.
+        
+        Args:
+            element (Any): The element to be checked in the bloom filter.
 
+        Returns:
+            bool: True if the element is probably in the filter, False if
+                the element is definitely not in the filter.
+        """
+        for i in range(self.num_hash_functions):
+            index = self.hash_function(str(element), i) % self.bit_array_size
+            if not self.bit_array[index]:
+                return False
+        return True
 
+    
     def hash_function(self, element: str, seed: int) -> int:
         """
         Apply a hash function to an element.
