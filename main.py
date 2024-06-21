@@ -30,7 +30,7 @@ def parse_arguments():
     return parser.parse_args()
 
 def calculate_compression_rate(m: int, n: int) -> float:
-    """Calculates the compression rate of a Bloom filter.
+    """Calculate the compression rate of a Bloom filter.
 
     Args:
         m (int): Size of the bit array (number of bits).
@@ -41,3 +41,28 @@ def calculate_compression_rate(m: int, n: int) -> float:
     """
     compression_rate = (m * math.log(2)) / n
     return compression_rate
+
+
+def calculate_false_positive_rate(m: int, k: int, n: int) -> float:
+    """
+    Calculate the false positive rate of a Bloom filter.
+
+    Args:
+        m (int): Size of the bit array (number of bits).
+        k (int): Number of hash functions.
+        n (int): Number of elements inserted into the filter.
+
+    Returns:
+        A float,  False positive rate (probability).
+    """
+    # Calculate the probability of a single bit not being set by any of the hash functions
+    prob_single_bit_not_set = math.exp(-(k * n) / m)
+
+    # Calculate the probability of a single bit being set (at least one hash function sets the bit)
+    prob_single_bit_set = 1 - prob_single_bit_not_set
+
+    # Calculate the false positive rate
+    false_positive_rate = prob_single_bit_set ** k
+
+    return false_positive_rate
+
