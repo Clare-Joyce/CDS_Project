@@ -18,8 +18,8 @@ class BloomFilter:
         # Define the filter capacity
         self.capacity = capacity
         self.false_positive_rate = false_positive_rate
-        self.num_hash_functions = self.calculate_bit_array_size(capacity, false_positive_rate)
-        self.bit_array_size = self.optimal_hash_functions(capacity, false_positive_rate)
+        self.bit_array_size = self.calculate_bit_array_size(capacity, false_positive_rate)
+        self.num_hash_functions = self.optimal_hash_functions(capacity, false_positive_rate)
         # Set all cells to False
         self.bit_array = [False]  * self.bit_array_size
 
