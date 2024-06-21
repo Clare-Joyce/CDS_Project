@@ -38,3 +38,4 @@ Imagine a canvas with several
 ## Resources
 * https://brilliant.org/wiki/bloom-filter/
 * https://www.geeksforgeeks.org/bloom-filters-introduction-and-python-implementation/
+* https://andybui01.github.io/bloom-filter/#implementation-and-benchmarks
