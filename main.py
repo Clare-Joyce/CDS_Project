@@ -94,3 +94,8 @@ def process(cap, fpr, data_type, seq_len):
 
     return df
 
+
+if __name__ == "__main__":
+    args = parse_arguments()
+    process(args.capacity, args.fpr, args.data_type, args.sequence_length)
+    
