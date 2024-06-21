@@ -26,8 +26,9 @@ class BloomFilter:
 
     def insert(self, element: Any):
         """Adds an element to the filter."""
-        pass
-
+        for i in range(self.num_hash_functions):
+            index = self.hash_function(element, i) % self.bit_array_size
+            self.bit_array[index] = True
 
 
     def check(self):
