@@ -67,11 +67,12 @@ def calculate_false_positive_rate(m: int, k: int, n: int) -> float:
 
     return false_positive_rate
 
-def process(cap, fpr, data_type, seq_len):
+def process(cap:int, fpr:float, m:int, k:int, data_type:str,
+            seq_len:int) -> pd.DataFrame:
     """"""
     results = []
     for i in range(1, cap, 5):
-        bf = BloomFilter(i, fpr)
+        bf = BloomFilter(i, fpr, m, k)
         if data_type =="dna":
             items = generate_multiple_dna_sequences(i, seq_len)
         if data_type == "words":
@@ -90,12 +91,14 @@ def process(cap, fpr, data_type, seq_len):
         cpr = calculate_compression_rate(bf.m, i)
         results.append((i, insertion_time, checking_time, fpr_new, cpr))
     df = pd.DataFrame(results, columns=["capacity", "insertion_time", "checking_time", "fpr", "cpr"])
-    df.to_csv(f"dataframe_{data_type}_{cap}.csv")
+    df.to_csv(f"dataframe_{data_type}_{cap}_{k}.csv")
 
     return df
 
 
 if __name__ == "__main__":
     args = parse_arguments()
-    process(args.capacity, args.fpr, args.data_type, args.sequence_length)
+    print("hi")
+    for k in range(5, args.k, 5):
+        process(args.capacity, args.fpr, args.m, k, args.data_type, args.sequence_length)
     
