@@ -10,11 +10,13 @@ from bloom_filter import BloomFilter
 from dna_sequence_generator import generate_multiple_dna_sequences
 from word_generator import random_word_generator
 
+
 def parse_arguments():
     """Parses command line arguments."""
-    parser = argparse.ArgumentParser(description="Bloom Filter Benchmarking Tool")
+    parser = argparse.ArgumentParser(
+        description="Bloom Filter Benchmarking Tool")
     parser.add_argument("--capacity", default=100, type=int, required=True,
-                        help="Maximum number of elements the Bloom filter can hold.")
+                        help="Maximum number of elements the filter can hold.")
     parser.add_argument("--fpr", default=0.01, type=float, required=True,
                         help="Initial desired false positive rate.")
     parser.add_argument("--m", default=0, type=int, required=False,
@@ -23,11 +25,12 @@ def parse_arguments():
                         help="Maximum number pf hash functions.")
     parser.add_argument("--data_type", type=str, choices=["words", "dna"],
                         required=True,
-                        help="Type of data to use for benchmarking: 'words' or 'dna'.")
+                        help="Type of data to used: 'words' or 'dna'.")
     parser.add_argument("--sequence_length", type=int, required=False,
                         help="Number of DNA sequences to generate.")
 
     return parser.parse_args()
+
 
 def calculate_compression_rate(m: int, n: int) -> float:
     """
@@ -56,10 +59,12 @@ def calculate_false_positive_rate(m: int, k: int, n: int) -> float:
     Returns:
         A float,  False positive rate (probability).
     """
-    # Calculate the probability of a single bit not being set by any of the hash functions
+    # Calculate the probability of a single bit not being set
+    # by any of the hash functions
     prob_single_bit_not_set = math.exp(-(k * n) / m)
 
-    # Calculate the probability of a single bit being set (at least one hash function sets the bit)
+    # Calculate the probability of a single bit being set
+    # (at least one hash function sets the bit)
     prob_single_bit_set = 1 - prob_single_bit_not_set
 
     # Calculate the false positive rate
@@ -67,13 +72,14 @@ def calculate_false_positive_rate(m: int, k: int, n: int) -> float:
 
     return false_positive_rate
 
-def process(cap:int, fpr:float, m:int, k:int, data_type:str,
-            seq_len:int) -> pd.DataFrame:
+
+def process(cap: int, fpr: float, m: int, k: int, data_type: str,
+            seq_len: int) -> pd.DataFrame:
     """"""
     results = []
     for i in range(1, cap, 5):
         bf = BloomFilter(i, fpr, m, k)
-        if data_type =="dna":
+        if data_type == "dna":
             items = generate_multiple_dna_sequences(i, seq_len)
         if data_type == "words":
             items = random_word_generator(i)
@@ -90,7 +96,8 @@ def process(cap:int, fpr:float, m:int, k:int, data_type:str,
         fpr_new = calculate_false_positive_rate(bf.m, bf.k, i)
         cpr = calculate_compression_rate(bf.m, i)
         results.append((i, insertion_time, checking_time, fpr_new, cpr))
-    df = pd.DataFrame(results, columns=["capacity", "insertion_time", "checking_time", "fpr", "cpr"])
+    df = pd.DataFrame(results, columns=["capacity", "insertion_time",
+                                        "checking_time", "fpr", "cpr"])
     df.to_csv(f"dataframe_{data_type}_{cap}_{k}.csv")
 
     return df
@@ -100,5 +107,5 @@ if __name__ == "__main__":
     args = parse_arguments()
     print("hi")
     for k in range(5, args.k, 5):
-        process(args.capacity, args.fpr, args.m, k, args.data_type, args.sequence_length)
-    
+        process(args.capacity, args.fpr, args.m, k,
+                args.data_type, args.sequence_length)
