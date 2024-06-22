@@ -47,6 +47,26 @@ class BloomFilter:
             raise ValueError("k should be positive")
         self.__k = k
 
+    @property
+    def capacity(self):
+        return self.__capacity
+
+    @capacity.setter
+    def capacity(self, capacity):
+        if capacity <= 0:
+            raise ValueError("Capacity should be positive")
+        self.__capacity = capacity
+
+    @property
+    def fpr(self):
+        return self.__fpr
+
+    @fpr.setter
+    def fpr(self, fpr):
+        if not (0 <= fpr <= 1):
+            raise ValueError("False positive rate should be between 0 and 1")
+        self.__fpr = fpr
+
     def insert(self, element: str):
         """Adds an element to the filter.
 
