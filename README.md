@@ -67,7 +67,13 @@ By using a larger bit array size and more number of hash functions we can reduce
 2. length of bit array (bit_array_size)
 3. number of elements stored in the bloom filter (capacity)
 4. false positive rate(fpr)
+
 ![alt text](https://github.com/Clare-Joyce/CDS_Project/blob/main/Figures/fpr_equation.png)
+
+p - probability of false positive
+m - size of bit array
+k - number of hash functions 
+n - be the number of expected elements to be inserted in the filter
 
 # Properties of bloom filter
 
