@@ -3,6 +3,7 @@ from faker import Faker
 
 fake = Faker()
 
+
 def random_word_generator(n):
     """Generates a random set of words.
 
