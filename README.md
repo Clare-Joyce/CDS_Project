@@ -64,6 +64,11 @@ By using a larger bit array size and more number of hash functions we can reduce
 # Calculations involved in the bloom filter
 
 1. number of hash functions (no_of_hash_functions)
+
+![alt text](https://github.com/Clare-Joyce/CDS_Project/blob/main/Figures/optimum_hash_function.png)
+
+k - number of hash functions, m - size of bit array, n - number of elements to be inserted.
+
 2. length of bit array (bit_array_size)
 
 ![alt text](https://github.com/Clare-Joyce/CDS_Project/blob/main/Figures/bit_array_size.png)
