@@ -97,7 +97,7 @@ def process() -> pd.DataFrame:
 
     args = parse_arguments()
     input_size = [i for i in range(10000, 1000001, 10000)]
-    input_size = [i for i in range(100, 1000, 100)]
+    # input_size = [i for i in range(100, 1000, 100)]
     for k in range(5, args.k + 1, 5):
         results = []
         for i in input_size:
