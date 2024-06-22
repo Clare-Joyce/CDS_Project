@@ -36,11 +36,11 @@ Suppose we need to add an element 'github' to the bloom filter, we use a bit arr
 
 ![alt text](https://github.com/Clare-Joyce/CDS_Project/blob/main/Figures/image_1.png)
 
-Assume the optimal hash function is calculated to be 3 representing h1, h2, h3. The calculated has value corresponds to h1 = 1, h2 = 3 and h3 = 7.
+Assume the optimal hash function is calculated to be 3 representing h1, h2, h3. The calculated has value corresponds to h1 = 1, h2 = 3 and h3 = 7. The bits at indices 1 , 2 and 7 are set to 1.
 
 ![alt text](https://github.com/Clare-Joyce/CDS_Project/blob/main/Figures/image_2.png)
 
-Now we add a new element 'data' to the bloom filter. The calculated optimal hash functions are 3 and corresponding hash values as h1 = 2, h2 = 3 and h3 = 9.
+Now we add a new element 'data' to the bloom filter. The calculated optimal hash functions are 3 and corresponding hash values as h1 = 2, h2 = 3 and h3 = 9. Similarly bits at indices 2, 3 and 9 are set to 1.
 
 ![alt text](https://github.com/Clare-Joyce/CDS_Project/blob/main/Figures/image_3.png)
 
@@ -51,12 +51,16 @@ Now we add a new element 'data' to the bloom filter. The calculated optimal hash
 3. Verify if the positions are already set to 1 in the array
 If any of the positions are set to zero we can make sure that the element is not present in the set, but if all possitions are already set to 1 that are high chances that the element is already a memeber of the set.
 
-
-
 # False Positive Rate
 
 While the bloom filter can guarantee that guarantee there is no false negatives that is when a filter says an element is not present, it is definitely not present, however they can produce false positives which means the filter says an element is present but it can be the case that it is not present. The false positive rate, can be computed using bit_array_size, no_of_hash_functions, and capacity which is the number of expected elements to be inserted into the filter.
 
+Let us illustrate this with an example, Suppose we want to check if 'pen' is already present or not. The hash value calculated is h1 = 2, h2 = 3 and h3 = 7.
+
+![alt text](https://github.com/Clare-Joyce/CDS_Project/blob/main/Figures/image_4.png)
+
+Even if we know 'pen' was never added to the set, the indices 2 was previously added for 'data' and indices 3 and 7 was added for 'github'. So bloom filter claims that 'pen' is already added to the set, which indicates a false positive case.
+By using a larger bit array size and more number of hash functions we can reduce the false positive rates.
 # Calculations involved in the bloom filter
 
 1. number of hash functions (no_of_hash_functions)
