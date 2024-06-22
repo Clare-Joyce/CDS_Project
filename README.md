@@ -95,6 +95,15 @@ This function calculate the bit array size, by computing the 'capacity' which is
 This function calculates the optimal number of has functions to be calculated for each element which is added to the filter.
 
 
+**suggested code structure**
+CDS_Project:
+    bloom_filter.py: what it does
+    report.ipynd: what it contains
+    .
+    .
+    .
+    .
+
 ## Tests
 
 In order to test the implementation performance of the bloom filters with two types of large dataset a set of random words and DNA sequences are generated with functions.
