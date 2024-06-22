@@ -57,9 +57,12 @@ class BloomFilter:
         Returns:
             None. Sets several bits to True
         """
+        indices = []
         for i in range(self.k):
             index = self.hash_function(element, i) % self.m
             self.bit_array[index] = True
+            indices.append(index)
+        return indices
 
 
     def check(self, element: str):
