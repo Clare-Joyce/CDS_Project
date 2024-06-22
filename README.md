@@ -66,6 +66,8 @@ By using a larger bit array size and more number of hash functions we can reduce
 1. number of hash functions (no_of_hash_functions)
 2. length of bit array (bit_array_size)
 3. number of elements stored in the bloom filter (capacity)
+4. false positive rate(fpr)
+\( P = \left( 1 - \left[ 1 - \frac{1}{m} \right]^{kn} \right)^k \).
 
 # Properties of bloom filter
 
