@@ -40,12 +40,18 @@ Assume the optimal hash function is calculated to be 3 representing h1, h2, h3. 
 
 ![alt text](https://github.com/Clare-Joyce/CDS_Project/blob/main/Figures/image_2.png)
 
+Now we add a new element 'data' to the bloom filter. The calculated optimal hash functions are 3 and corresponding hash values as h1 = 2, h2 = 3 and h3 = 9.
+
+![alt text](https://github.com/Clare-Joyce/CDS_Project/blob/main/Figures/image_3.png)
+
 # Checking if the element already exist
 
 1. Element is hashed through the same hash functions
 2. Identify the position in bit array which needs to be set to 1.
 3. Verify if the positions are already set to 1 in the array
 If any of the positions are set to zero we can make sure that the element is not present in the set, but if all possitions are already set to 1 that are high chances that the element is already a memeber of the set.
+
+
 
 # False Positive Rate
 
