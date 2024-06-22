@@ -32,7 +32,13 @@ Imagine if we have several elements and we want to store the elements into a set
 3. Identify the position in bit array and set to 1.
 There are chances that some bits on the bit array are set to one more than ones due to hash collisions.
 
+Suppose we need to add an element 'github' to the bloom filter, we use a bit array of length 10, all set to 0 initially.
+
 ![alt text](https://github.com/Clare-Joyce/CDS_Project/blob/main/Figures/image_1.png)
+
+Assume the optimal hash function is calculated to be 3 representing h1, h2, h3. The calculated has value corresponds to h1 = 1, h2 = 3 and h3 = 7.
+
+![alt text](https://github.com/Clare-Joyce/CDS_Project/blob/main/Figures/image_2.png)
 
 # Checking if the element already exist
 
