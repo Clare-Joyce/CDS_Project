@@ -152,5 +152,6 @@ class BloomFilter:
             An integer representing the optimal number of hash functions
                 to calculate the hash value.
         """
-        no_of_hash_functions = int((self.fpr) * math.log(2))
+        no_of_hash_functions = math.ceil((self.m /
+                                          self.capacity) * math.log(2))
         return no_of_hash_functions
