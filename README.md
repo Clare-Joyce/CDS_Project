@@ -97,6 +97,14 @@ This function calculates the optimal number of has functions to be calculated fo
 
 ## Tests
 
+In order to test the implementation performance of the bloom filters with two types of large dataset a set of random words and DNA sequences are generated with functions.
+
+1. random_word_generator function
+Generates a random set of words of a given length
+
+2. generate_dna_sequence function
+Generates a random DNA sequence of a given length
+
 
 
 ## Benchmarking
