@@ -32,6 +32,8 @@ Imagine if we have several elements and we want to store the elements into a set
 3. Identify the position in bit array and set to 1.
 There are chances that some bits on the bit array are set to one more than ones due to hash collisions.
 
+![alt text](image.png)
+
 # Checking if the element already exist
 
 1. Element is hashed through the same hash functions
@@ -58,41 +60,6 @@ While the bloom filter can guarantee that guarantee there is no false negatives 
 ## Code Structure for the implementation
 
 This section provides implementation steps in BloomFilter class with methods to add elements to the filter and check if it is already present in the set.
-
-Class : BloomFilter
-1. Initialization (__init__ method):
-capacity : size of the bit array
-fpr : false positive rate
-
-2. Setter Method (@m.setter):
-To calculate the size of the bit array.
-
-3. Setter Method (@k.setter):
-To calculate the optimal number of hash functions.
-
-4. Setter Method (@capacity.setter):
-To calculate the number of expected elements to be inserted in the bloom filter.
-
-5. Setter Method (@fpr.setter):
-To calculate the false positive rate.
-
-6. Insert function (insert method)
-It adds an element to the filter.
-
-7. Check function (check method)
-It Checks if a new element before adding if it exists in the filter already.
-
-8. Contains Method (__contains__ method)
-Allows usage of 'in' keyword to check membership of an element in the bloom filter by means of hash values.
-
-9. Hash function (hash_function static method)
-This function calculates the hash values for each elements added to the bloom filter with its corresponding optimal number of hash functions and size of the bit array.
-
-10. Size of bit array (calculate_bit_array_size static method)
-This function calculate the bit array size, by computing the 'capacity' which is the number of elements the filter can hold.
-
-11. Optimal number of hash function (optimal_hash_functions static method)
-This function calculates the optimal number of has functions to be calculated for each element which is added to the filter.
 
 
 **suggested code structure**
