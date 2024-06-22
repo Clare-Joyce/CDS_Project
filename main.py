@@ -96,7 +96,7 @@ def process() -> pd.DataFrame:
     """
 
     args = parse_arguments()
-    # input_size = [i for i in range(10000, 1000001, 10000)]
+    input_size = [i for i in range(10000, 1000001, 10000)]
     input_size = [i for i in range(100, 1000, 100)]
     for k in range(5, args.k + 1, 5):
         results = []
@@ -109,12 +109,12 @@ def process() -> pd.DataFrame:
             if args.data_type == "words":
                 items_in = random_word_generator(i)
                 items_check = random_word_generator(i)
-
+            print(f"Inserting {i} words to the filter with {k} hash functions")
             start_time = time.time()
             for item in items_in:
                 bf.insert(item)
             insertion_time = time.time() - start_time
-
+            print(f"Checking {i} words in the filter with {k} hash functions")
             start_time = time.time()
             for item in items_check:
                 bf.check(item)
