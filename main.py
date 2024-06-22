@@ -124,7 +124,6 @@ def process(cap: int, fpr: float, m: int, k: int, data_type: str,
 
 if __name__ == "__main__":
     args = parse_arguments()
-    print("hi")
     for k in range(5, args.k, 5):
         process(args.capacity, args.fpr, args.m, k,
                 args.data_type, args.sequence_length)
