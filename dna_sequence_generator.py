@@ -2,6 +2,7 @@
 
 import random
 
+
 def generate_dna_sequence(length: int) -> str:
     """Generates a random DNA sequence of a given length.
 
@@ -13,6 +14,7 @@ def generate_dna_sequence(length: int) -> str:
         'T', 'C', 'G'.
     """
     return ''.join(random.choice(['A', 'T', 'C', 'G']) for _ in range(length))
+
 
 def generate_multiple_dna_sequences(num_sequences: int, length: int) -> list:
     """Generates several random DNA sequences.
