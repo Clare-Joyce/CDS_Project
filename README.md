@@ -68,32 +68,34 @@ By using a larger bit array size and more number of hash functions we can reduce
 
 ![alt text](https://github.com/Clare-Joyce/CDS_Project/blob/main/Figures/optimum_hash_function.png)
 
-    k - number of hash functions, m - size of bit array, n - number of elements to be inserted.
+k - number of hash functions, m - size of bit array, n - number of elements to be inserted.
 
 2. length of bit array (bit_array_size)
 
 ![alt text](https://github.com/Clare-Joyce/CDS_Project/blob/main/Figures/bit_array_size.png)
 
-    n - number of expected elements, p - false positive rate, m - bit array size.
+n - number of expected elements, p - false positive rate, m - bit array size.
 
 3. false positive rate(fpr)
 
 ![alt text](https://github.com/Clare-Joyce/CDS_Project/blob/main/Figures/fpr_equation.png)
 
-    p - false positive rate, m - size of bit array, k - number of hash functions, n - number of expected elements.
+p - false positive rate, m - size of bit array, k - number of hash functions, n - number of expected elements.
 
 # Time and Space Complexity
 
 The bloom filter's time and space efficiency is a key benefit.  Ignorable value of accuracy is sacrificed maintain these features.
+
 A bloom filter of m bits and k optimal number of hash functions, the time order for operations insertion and searching takes O(k) time. This is because the element as such is not entering the filter only the calculated hash values enters. Hence the time complexity does not depend on the number of elements already entered.
+
 The space complexity involved in the bloom filter is O(m). This is evaluated by m which is the size of the bit array where the hash values for each elements are stored. The number of hash functions does not directly impact the space complexity. A larger value of m will reduce the false positive rate.
 
 ![alt text](https://github.com/Clare-Joyce/CDS_Project/blob/main/Figures/Time_Space_Complexity.png)
 
 # Properties of bloom filter
 
-1. Independent : The hash functions are independent,  there is very less chance of more than one elements mapping to the same position in the bit array, this will reduce the possibility of false positives.
-2. Uniform : Uniform distribution bits in the bit array reduces the chances of multiple elements hashing to the same bit positions which inturn reduce collision and false positive rate.
+1. Independent : The hash functions calculated for each elements are independent of each other,  due to this property there is very less chance of more than one elements mapping to the same position in the bit array. The independence reduces the correlation between the hash values this will inturn reduces the possibility of false positives.
+2. Uniform : Uniform distribution of bits in the bit array reduces the chances of multiple elements hashing to the same bit positions. This will ensure the optimal utilization of space and improve the accuracy of membership queries, which inturn reduce collision and false positive rate.
 
 ## Code Structure for the implementation
 
