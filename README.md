@@ -32,7 +32,7 @@ Imagine if we have several elements and we want to store the elements into a set
 3. Identify the position in bit array and set to 1.
 There are chances that some bits on the bit array are set to one more than ones due to hash collisions.
 
-![alt text](image.png)
+![alt text](https://github.com/Clare-Joyce/CDS_Project/blob/main/Figures/image_1.png)
 
 # Checking if the element already exist
 
