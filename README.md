@@ -96,7 +96,9 @@ This function calculates the optimal number of has functions to be calculated fo
 
 
 **suggested code structure**
+
 CDS_Project:
+
     bloom_filter.py: what it does
     report.ipynd: what it contains
     .
