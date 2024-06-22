@@ -75,7 +75,26 @@ def calculate_false_positive_rate(m: int, k: int, n: int) -> float:
 
 def process(cap: int, fpr: float, m: int, k: int, data_type: str,
             seq_len: int) -> pd.DataFrame:
-    """"""
+    """Processes bloom filter functionality and tests performance.
+
+    Note:
+        The bloom filter is designed to work in two ways. One could
+        specify just the capacity and the false positive rate or
+        specify the bit array size and the number of hash functions
+        needed. For the first case, the program automatically calculates
+        the optimal bit array size and the optimal number of hash functions
+
+    Args:
+        cap (int): The initial capacity of the filter
+        fpr (float): The false positive rate defined by the user
+        m (int): The bit array size
+        k (int): The desired number of hash functions
+        data_type (str): The data type, normal words or DNA sequences
+        seq_len (int): The length of the DNA sequence
+
+    Returns:
+        A pandas dataframe
+    """
     results = []
     for i in range(1, cap, 5):
         bf = BloomFilter(i, fpr, m, k)
