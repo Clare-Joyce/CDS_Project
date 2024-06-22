@@ -10,18 +10,19 @@ class BloomFilter:
 
         Args:
             capcacity (int): Number of elements the filter can hold
-            num_hash_functions (int): Number of hash functions to use
+            fpr (float):  The false positive rate
+            m (int): The bit array size
+            k (int): Number of hash functions to use
 
         Returns:
             None.
         """
-        # Define the filter capacity
-        self.capacity = capacity
-        self.fpr = fpr
-        self.m = m
-        self.k = k
-        # Set all cells to False
-        self.bit_array = [False] * self.m
+
+        self.capacity = capacity  # Define the filter capacity
+        self.fpr = fpr  # False positive rate
+        self.m = m  # Bit array size
+        self.k = k  # Number of hash functions
+        self.bit_array = [False] * self.m  # Set all cells to False
 
     @property
     def m(self):
