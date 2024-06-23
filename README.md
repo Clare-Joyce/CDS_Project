@@ -125,19 +125,45 @@ CDS_Project
     jobscript.py : A job script with comments to automate the execution of tasks in high performance coputing (HPC).
 
 ## Tests
+This section illustrates how to use the filter
+```python
+from bloom_filter import BloomFilter
+
+
+capacity = 100
+false_positive_rate = 0.01
+bloom_filter = BloomFilter(capacity, false_positive_rate, 100, 5)
+
+elements_to_insert = ["apple", "banana", "orange"]
+for element in elements_to_insert:
+    bloom_filter.insert(element)
+
+for element in elements_to_insert:
+    if bloom_filter.check(element):
+        print(f"Success: {element} is probably in the filter.")
+    else:
+        print(f"Error: {element} should be in the filter but is not detected.")
+
+# OUTPUT
+Success: apple is probably in the filter.
+Success: banana is probably in the filter.
+Success: orange is probably in the filter.
+
+test_element_not_in_filter = "nonexistent"
+if test_element_not_in_filter in bloom_filter:
+    print(f"Warning: {test_element_not_in_filter} is not in the filter but was detected (false positive).")
+else:
+    print(f"{test_element_not_in_filter} is not in the filter (expected).")
+
+# OUTPUT
+nonexistent is not in the filter (expected).
+```
 
 The basic operation of the Bloom filter implementation was initially tested using `pytest' before starting with the benchmarking. This is ensure that the code is correct and that all operations does function as intended.
 
 ## Benchmarking
 
 To test the implementation performance of the bloom filters with two types of large dataset a set of random words and DNA sequences are generated with functions.
-
-1. random_word_generator function
-Generates a random set of words of a given length
-
-2. generate_dna_sequence function
-Generates a random DNA sequence of a given length
-
 
 
 [Benchmarking](report.ipynb)
