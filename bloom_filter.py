@@ -78,7 +78,7 @@ class BloomFilter:
             None. Sets several bits to True
         """
         indices = []
-        for i in range(self.k):
+        for i in range(1, self.k + 1):
             index = self.hash_function(element, i) % self.m
             self.bit_array[index] = True
             indices.append(index)
@@ -94,7 +94,7 @@ class BloomFilter:
             bool: True if the element is probably in the filter, False if
                 the element is definitely not in the filter.
         """
-        for i in range(1, self.k+1):
+        for i in range(1, self.k + 1):
             index = self.hash_function(element, i) % self.m
             if not self.bit_array[index]:
                 return False
