@@ -103,15 +103,24 @@ This section provides the details on the code structure for the entire implement
 
 
 CDS_Project
-        Figures : The folder containing all images (png)  which are used in README.md file to illustrate the    functionality of bloom filter
-        bloom_filter.py : The python file has the code of Class for Bloom filter, using mmh3 hash function.
-        dna_sequence_generator.py : The python function to generate random DNA sequences of given length and count to test the functionality of bloom filter.
-        independence_and_uniformity.py : The python function to evaluate the independence and uniformity properties of bloom filter.
-        main.py : The main python programe which has the entry modeule to initialize the code, and calls to other functions and class to start the program logic.
-        README.md : The mark down file which contains the content of project repository and implementation of the project.
-        report.ipynb : The report created from the benchmarking process which has a comprehensive details about the functionality and performance of the bloom filter.
-        word_generator.py : The python function to generate randon words of given count to test the functionality of bloom filter.
-        jobscript.py : A job script with comments to automate the execution of tasks in high performance coputing (HPC).
+
+    Figures : The folder containing all images (png)  which are used in README.md file to illustrate the    functionality of bloom filter
+
+    bloom_filter.py : The python file has the code of Class for Bloom filter, using mmh3 hash function.
+        
+    dna_sequence_generator.py : The python function to generate random DNA sequences of given length and count to test the functionality of bloom filter.
+        
+    independence_and_uniformity.py : The python function to evaluate the independence and uniformity properties of bloom filter.
+        
+    main.py : The main python programe which has the entry modeule to initialize the code, and calls to other functions and class to start the program logic.
+        
+    README.md : The mark down file which contains the content of project repository and implementation of the project.
+        
+    report.ipynb : The report created from the benchmarking process which has a comprehensive details about the functionality and performance of the bloom filter.
+        
+    word_generator.py : The python function to generate randon words of given count to test the functionality of bloom filter.
+    
+    jobscript.py : A job script with comments to automate the execution of tasks in high performance coputing (HPC).
 
 ## Tests
 
