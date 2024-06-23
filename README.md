@@ -124,7 +124,11 @@ CDS_Project
     
     jobscript.py : A job script with comments to automate the execution of tasks in high performance coputing (HPC).
 
+<<<<<<< HEAD
 ## Tests
+=======
+## Example Run
+>>>>>>> 42149e8 (Update benchmarking scope, tested with random words only)
 This section illustrates how to use the filter
 ```python
 from bloom_filter import BloomFilter
@@ -161,9 +165,11 @@ nonexistent is not in the filter (expected).
 
 The basic operation of the Bloom filter implementation was initially tested using `pytest' before starting with the benchmarking. This is ensure that the code is correct and that all operations does function as intended.
 
-## Benchmarking
+## Testing and Benchmarking
 
-To test the implementation performance of the bloom filters with two types of large dataset a set of random words and DNA sequences are generated with functions.
+The basic operation of the Bloom filter implementation was initially tested as illustrated above before starting with the benchmarking. This is to ensure that the code is correct and that all operations do function as intended.
+
+Though the filter is implemented with take both words and DNA sequences, it was tested only with random words generated with functions.
 
 
 [Benchmarking](report.ipynb)
