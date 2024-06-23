@@ -124,11 +124,7 @@ CDS_Project
     
     jobscript.py : A job script with comments to automate the execution of tasks in high performance coputing (HPC).
 
-<<<<<<< HEAD
-## Tests
-=======
 ## Example Run
->>>>>>> 42149e8 (Update benchmarking scope, tested with random words only)
 This section illustrates how to use the filter
 ```python
 from bloom_filter import BloomFilter
