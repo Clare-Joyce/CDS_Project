@@ -99,19 +99,36 @@ The space complexity involved in the bloom filter is O(m). This is evaluated by 
 
 ## Code Structure for the implementation
 
-This section provides implementation steps in BloomFilter class with methods to add elements to the filter and check if it is already present in the set.
+This section provides the details on the code structure for the entire implementation of this project.
 
 
-**suggested code structure**
-
-CDS_Project:
-
-    bloom_filter.py: what it does
-    report.ipynb: what it contains
-    .
-    .
-    .
-    .
+CDS_Project
+│
+├── Figures : 
+|   
+│
+├── bloom_filter.py : 
+|
+|
+|──dna_sequence_generator.py :
+|
+|
+|──independence_and_uniformity.py : 
+|
+|
+|──main.py : 
+|
+|
+|──README.md : 
+|
+|
+|──report.ipynb : 
+|
+|
+|──word_generator.py : 
+|
+|
+|──jobscript.py : 
 
 ## Tests
 
