@@ -1,3 +1,17 @@
+
+"""Implements a Bloom filter class.
+
+Note:
+    This filter has been implemented such that is can be use
+    in two different ways.
+    - by specify the capacity and the false positive rate
+    - by parsing in the bit array size and the number of hash functions
+
+    For case 1, the optimal bit array size and the optimal number
+    of hash functions are then computed programmtically.
+
+"""
+
 import math
 import mmh3
 

@@ -124,23 +124,51 @@ CDS_Project
     
     jobscript.py : A job script with comments to automate the execution of tasks in high performance coputing (HPC).
 
-## Tests
+## Example Run
+This section illustrates how to use the filter
+```python
+from bloom_filter import BloomFilter
+
+
+capacity = 100
+false_positive_rate = 0.01
+bloom_filter = BloomFilter(capacity, false_positive_rate, 100, 5)
+
+elements_to_insert = ["apple", "banana", "orange"]
+for element in elements_to_insert:
+    bloom_filter.insert(element)
+
+for element in elements_to_insert:
+    if bloom_filter.check(element):
+        print(f"Success: {element} is probably in the filter.")
+    else:
+        print(f"Error: {element} should be in the filter but is not detected.")
+
+# OUTPUT
+Success: apple is probably in the filter.
+Success: banana is probably in the filter.
+Success: orange is probably in the filter.
+
+test_element_not_in_filter = "nonexistent"
+if test_element_not_in_filter in bloom_filter:
+    print(f"Warning: {test_element_not_in_filter} is not in the filter but was detected (false positive).")
+else:
+    print(f"{test_element_not_in_filter} is not in the filter (expected).")
+
+# OUTPUT
+nonexistent is not in the filter (expected).
+```
 
 The basic operation of the Bloom filter implementation was initially tested using `pytest' before starting with the benchmarking. This is ensure that the code is correct and that all operations does function as intended.
 
-## Benchmarking
+## Testing and Benchmarking
 
-Benchmarking is done to evaluate the performance of our Bloom filter implementation. The benchmarking process includes evaluating the insertion and checking times for varying input size and varying the numbers of hash functions. The evaluation of false positive rates with insertion time and checking time for varying hash functions is also done. 
+The basic operation of the Bloom filter implementation was initially tested as illustrated above before starting with the benchmarking. This is to ensure that the code is correct and that all operations do function as intended.
 
-To evaluate the implementation performance of the bloom filters with two types of large scale  datasets were generated.
+Though the filter is implemented with take both words and DNA sequences, it was tested only with random words generated with functions.
 
-1. random_word_generator function
-Generates a random set of words for a given length
 
-2. generate_dna_sequence function
-Generates a random DNA sequence for a given length
-
-The results and the details of the benchmarking process is added to the report. [Benchmarking](report.ipynb)
+[Benchmarking](report.ipynb)
 
 
 ## Results
