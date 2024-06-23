@@ -130,20 +130,22 @@ The basic operation of the Bloom filter implementation was initially tested usin
 
 ## Benchmarking
 
-To test the implementation performance of the bloom filters with two types of large dataset a set of random words and DNA sequences are generated with functions.
+Benchmarking is done to evaluate the performance of our Bloom filter implementation. The benchmarking process includes evaluating the insertion and checking times for varying input size and varying the numbers of hash functions. The evaluation of false positive rates with insertion time and checking time for varying hash functions is also done. 
+
+To evaluate the implementation performance of the bloom filters with two types of large scale  datasets were generated.
 
 1. random_word_generator function
-Generates a random set of words of a given length
+Generates a random set of words for a given length
 
 2. generate_dna_sequence function
-Generates a random DNA sequence of a given length
+Generates a random DNA sequence for a given length
 
-
-
-[Benchmarking](report.ipynb)
+The results and the details of the benchmarking process is added to the report. [Benchmarking](report.ipynb)
 
 
 ## Results
+
+The functionality on implementation of bloom filter was tested throughly and benchmarked. The testing ensured the basic operations such as insertion and searching works as expected with calculation of optimal number of hash functions by ensuring the minimal false positive rate. The benchmarking allowed to evaluate the efficiency of bloom filter while working with larage scale data sets. The insertion time, checking time and false positive rates were evaluated for increasing input size and increasing number of hash functions. The insertion time and search time showed a linear behaviour with increase in input sizes, indicating a consistent performance at various scales. With increase in hash functions the time insertion and checking time also increased which suggests the optimization required for cases where we have higher high insertion rates. When the optimal number of hash functions increases beyond a threshold level, the false positive rate increases initially and further stabilizes to a constant level. The benchmarking results affirms the scalability and efficiency of our bloom filter implementation in real world applications. However certain limitations like increased insertion time, checking time and false positive rates with increased number of hash functions should be optimized based on the application. The future improvements could be done on optimising the hash function computations and comparison with different variants of Bloom filters.
 
 ## Resources
 * https://brilliant.org/wiki/bloom-filter/
