@@ -102,7 +102,7 @@ The space complexity involved in the bloom filter is O(m). This is evaluated by 
 This section provides the details on the code structure for the entire implementation of this project.
 
 
-CDS_Project
+CDS_Project/
     │
     ├── Figures : 
     |   
