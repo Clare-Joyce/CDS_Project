@@ -119,10 +119,16 @@ CDS_Project
     report.ipynb : The report created from the benchmarking process which has a comprehensive details about the functionality and performance of the bloom filter.
         
     word_generator.py : The python function to generate randon words of given count to test the functionality of bloom filter.
+
+    test_bloom_filter.py : The python test script which contains sample test cases to test the basic functionality of bloom filter.
     
     jobscript.py : A job script with comments to automate the execution of tasks in high performance coputing (HPC).
 
 ## Tests
+
+The basic operation of the Bloom filter implementation was initially tested using `pytest' before starting with the benchmarking. This is ensure that the code is correct and that all operations does function as intended.
+
+## Benchmarking
 
 To test the implementation performance of the bloom filters with two types of large dataset a set of random words and DNA sequences are generated with functions.
 
@@ -131,10 +137,6 @@ Generates a random set of words of a given length
 
 2. generate_dna_sequence function
 Generates a random DNA sequence of a given length
-
-
-
-## Benchmarking
 
 
 
