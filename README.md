@@ -104,7 +104,7 @@ This section provides the details on the code structure for the entire implement
 
 CDS_Project
 
-    Figures : The folder containing all images (png)  which are used in README.md file to illustrate the    functionality of bloom filter
+    Figures : The folder containing all images (png) which are used in README.md file to illustrate the     functionality of bloom filter
 
     bloom_filter.py : The python file has the code of Class for Bloom filter, using mmh3 hash function.
         
@@ -124,7 +124,7 @@ CDS_Project
 
 ## Tests
 
-In order to test the implementation performance of the bloom filters with two types of large dataset a set of random words and DNA sequences are generated with functions.
+To test the implementation performance of the bloom filters with two types of large dataset a set of random words and DNA sequences are generated with functions.
 
 1. random_word_generator function
 Generates a random set of words of a given length
@@ -137,9 +137,15 @@ Generates a random DNA sequence of a given length
 ## Benchmarking
 
 
+
+[Benchmarking](report.ipynb)
+
+
 ## Results
 
 ## Resources
 * https://brilliant.org/wiki/bloom-filter/
 * https://www.geeksforgeeks.org/bloom-filters-introduction-and-python-implementation/
 * https://andybui01.github.io/bloom-filter/#implementation-and-benchmarks
+* https://systemdesign.one/bloom-filters-explained
+
