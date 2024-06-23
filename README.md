@@ -103,32 +103,32 @@ This section provides the details on the code structure for the entire implement
 
 
 CDS_Project
-│
-├── Figures : 
-|   
-│
-├── bloom_filter.py : 
-|
-|
-|──dna_sequence_generator.py :
-|
-|
-|──independence_and_uniformity.py : 
-|
-|
-|──main.py : 
-|
-|
-|──README.md : 
-|
-|
-|──report.ipynb : 
-|
-|
-|──word_generator.py : 
-|
-|
-|──jobscript.py : 
+    │
+    ├── Figures : 
+    |   
+    │
+    ├── bloom_filter.py : 
+    |
+    |
+    |──dna_sequence_generator.py :
+    |
+    |
+    |──independence_and_uniformity.py : 
+    |
+    |
+    |──main.py : 
+    |
+    |
+    |──README.md : 
+    |
+    |
+    |──report.ipynb : 
+    |
+    |
+    |──word_generator.py : 
+    |
+    |
+    |──jobscript.py : 
 
 ## Tests
 
