@@ -1,0 +1,128 @@
+SLURM_JOB_ID: 61701863
+SLURM_JOB_USER: vsc36295
+SLURM_JOB_ACCOUNT: lp_h_ds_2023_2024
+SLURM_JOB_NAME: jobscript_cds.slurm
+SLURM_CLUSTER_NAME: wice
+SLURM_JOB_PARTITION: batch
+SLURM_NNODES: 1
+SLURM_NODELIST: s28c11n1
+SLURM_JOB_CPUS_PER_NODE: 1
+Date: Sat Jun 22 20:14:56 CEST 2024
+Walltime: 00-20:10:00
+========================================================================
+Requirement already satisfied: pip in ./myenvtest/lib/python3.11/site-packages (24.1)
+Requirement already satisfied: pip in ./myenvtest/lib/python3.11/site-packages (24.1)
+Requirement already satisfied: setuptools in ./myenvtest/lib/python3.11/site-packages (70.1.0)
+Requirement already satisfied: mmh3 in ./myenvtest/lib/python3.11/site-packages (4.1.0)
+Requirement already satisfied: pandas in ./myenvtest/lib/python3.11/site-packages (2.2.2)
+Requirement already satisfied: numpy>=1.23.2 in ./myenvtest/lib/python3.11/site-packages (from pandas) (2.0.0)
+Requirement already satisfied: python-dateutil>=2.8.2 in ./myenvtest/lib/python3.11/site-packages (from pandas) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in ./myenvtest/lib/python3.11/site-packages (from pandas) (2024.1)
+Requirement already satisfied: tzdata>=2022.7 in ./myenvtest/lib/python3.11/site-packages (from pandas) (2024.1)
+Requirement already satisfied: six>=1.5 in ./myenvtest/lib/python3.11/site-packages (from python-dateutil>=2.8.2->pandas) (1.16.0)
+Requirement already satisfied: scipy in ./myenvtest/lib/python3.11/site-packages (1.13.1)
+Requirement already satisfied: numpy<2.3,>=1.22.4 in ./myenvtest/lib/python3.11/site-packages (from scipy) (2.0.0)
+Requirement already satisfied: numpy in ./myenvtest/lib/python3.11/site-packages (2.0.0)
+Requirement already satisfied: faker in ./myenvtest/lib/python3.11/site-packages (25.9.1)
+Requirement already satisfied: python-dateutil>=2.4 in ./myenvtest/lib/python3.11/site-packages (from faker) (2.9.0.post0)
+Requirement already satisfied: six>=1.5 in ./myenvtest/lib/python3.11/site-packages (from python-dateutil>=2.4->faker) (1.16.0)
+Inserting 10000 words to the filter with 5 hash functions
+Checking 10000 words in the filter with 5 hash functions
+Inserting 110000 words to the filter with 5 hash functions
+Checking 110000 words in the filter with 5 hash functions
+Inserting 210000 words to the filter with 5 hash functions
+Checking 210000 words in the filter with 5 hash functions
+Inserting 310000 words to the filter with 5 hash functions
+Checking 310000 words in the filter with 5 hash functions
+Inserting 410000 words to the filter with 5 hash functions
+Checking 410000 words in the filter with 5 hash functions
+Inserting 510000 words to the filter with 5 hash functions
+Checking 510000 words in the filter with 5 hash functions
+Inserting 610000 words to the filter with 5 hash functions
+Checking 610000 words in the filter with 5 hash functions
+Inserting 710000 words to the filter with 5 hash functions
+Checking 710000 words in the filter with 5 hash functions
+Inserting 810000 words to the filter with 5 hash functions
+Checking 810000 words in the filter with 5 hash functions
+Inserting 910000 words to the filter with 5 hash functions
+Checking 910000 words in the filter with 5 hash functions
+Inserting 1010000 words to the filter with 5 hash functions
+Checking 1010000 words in the filter with 5 hash functions
+Inserting 1110000 words to the filter with 5 hash functions
+Checking 1110000 words in the filter with 5 hash functions
+Inserting 1210000 words to the filter with 5 hash functions
+Checking 1210000 words in the filter with 5 hash functions
+Inserting 1310000 words to the filter with 5 hash functions
+Checking 1310000 words in the filter with 5 hash functions
+Inserting 1410000 words to the filter with 5 hash functions
+Checking 1410000 words in the filter with 5 hash functions
+Inserting 1510000 words to the filter with 5 hash functions
+Checking 1510000 words in the filter with 5 hash functions
+Inserting 1610000 words to the filter with 5 hash functions
+Checking 1610000 words in the filter with 5 hash functions
+Inserting 1710000 words to the filter with 5 hash functions
+Checking 1710000 words in the filter with 5 hash functions
+Inserting 1810000 words to the filter with 5 hash functions
+Checking 1810000 words in the filter with 5 hash functions
+Inserting 1910000 words to the filter with 5 hash functions
+Checking 1910000 words in the filter with 5 hash functions
+Inserting 2010000 words to the filter with 5 hash functions
+Checking 2010000 words in the filter with 5 hash functions
+Inserting 2110000 words to the filter with 5 hash functions
+Checking 2110000 words in the filter with 5 hash functions
+Inserting 2210000 words to the filter with 5 hash functions
+Checking 2210000 words in the filter with 5 hash functions
+Inserting 2310000 words to the filter with 5 hash functions
+Checking 2310000 words in the filter with 5 hash functions
+Inserting 2410000 words to the filter with 5 hash functions
+Checking 2410000 words in the filter with 5 hash functions
+Inserting 2510000 words to the filter with 5 hash functions
+Checking 2510000 words in the filter with 5 hash functions
+Inserting 2610000 words to the filter with 5 hash functions
+Checking 2610000 words in the filter with 5 hash functions
+Inserting 2710000 words to the filter with 5 hash functions
+Checking 2710000 words in the filter with 5 hash functions
+Inserting 2810000 words to the filter with 5 hash functions
+Checking 2810000 words in the filter with 5 hash functions
+Inserting 2910000 words to the filter with 5 hash functions
+Checking 2910000 words in the filter with 5 hash functions
+Inserting 3010000 words to the filter with 5 hash functions
+Checking 3010000 words in the filter with 5 hash functions
+Inserting 3110000 words to the filter with 5 hash functions
+Checking 3110000 words in the filter with 5 hash functions
+Inserting 3210000 words to the filter with 5 hash functions
+Checking 3210000 words in the filter with 5 hash functions
+Inserting 3310000 words to the filter with 5 hash functions
+Checking 3310000 words in the filter with 5 hash functions
+Inserting 3410000 words to the filter with 5 hash functions
+Checking 3410000 words in the filter with 5 hash functions
+Inserting 3510000 words to the filter with 5 hash functions
+Checking 3510000 words in the filter with 5 hash functions
+Inserting 3610000 words to the filter with 5 hash functions
+Checking 3610000 words in the filter with 5 hash functions
+Inserting 3710000 words to the filter with 5 hash functions
+Checking 3710000 words in the filter with 5 hash functions
+Inserting 3810000 words to the filter with 5 hash functions
+Checking 3810000 words in the filter with 5 hash functions
+Inserting 3910000 words to the filter with 5 hash functions
+Checking 3910000 words in the filter with 5 hash functions
+Inserting 4010000 words to the filter with 5 hash functions
+Checking 4010000 words in the filter with 5 hash functions
+Inserting 4110000 words to the filter with 5 hash functions
+Checking 4110000 words in the filter with 5 hash functions
+Inserting 4210000 words to the filter with 5 hash functions
+Checking 4210000 words in the filter with 5 hash functions
+Inserting 4310000 words to the filter with 5 hash functions
+Checking 4310000 words in the filter with 5 hash functions
+Inserting 4410000 words to the filter with 5 hash functions
+Checking 4410000 words in the filter with 5 hash functions
+Inserting 4510000 words to the filter with 5 hash functions
+Checking 4510000 words in the filter with 5 hash functions
+Inserting 4610000 words to the filter with 5 hash functions
+Checking 4610000 words in the filter with 5 hash functions
+Inserting 4710000 words to the filter with 5 hash functions
+Checking 4710000 words in the filter with 5 hash functions
+Inserting 4810000 words to the filter with 5 hash functions
+Checking 4810000 words in the filter with 5 hash functions
+Inserting 4910000 words to the filter with 5 hash functions
+Checking 4910000 words in the filter with 5 hash functions
