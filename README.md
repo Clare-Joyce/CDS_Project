@@ -27,20 +27,20 @@ Imagine if we have several elements and we want to store the elements into a set
 
 # Adding an item to the bloom filter
 
-1. The element is hashed through optimal number of hash function
+1. The element is hashed through by a number of hash functions
 2. The hash value is generated from hash function and is reduced as per the length of bit array
 3. Identify the position in bit array and set to 1.
-There are chances that some bits on the bit array are set to one more than ones due to hash collisions.
+There are chances that some bits on the bit array are set to one more than ones resulting in hash collisions.
 
 Suppose we need to add an element 'github' to the bloom filter, we use a bit array of length 10, all set to 0 initially.
 
 ![alt text](https://github.com/Clare-Joyce/CDS_Project/blob/main/Figures/image_1.png)
 
-Assume the optimal hash function is calculated to be 3 representing h1, h2, h3. The calculated has value corresponds to h1 = 1, h2 = 3 and h3 = 7. The bits at indices 1 , 2 and 7 are set to 1.
+Assume using 3 hash functions represented as h1, h2, h3. The calculated has value corresponds to h1 = 1, h2 = 3 and h3 = 7. The bits at indices 1 , 2 and 7 are set to 1.
 
 ![alt text](https://github.com/Clare-Joyce/CDS_Project/blob/main/Figures/image_2.png)
 
-Now we add a new element 'data' to the bloom filter. The calculated optimal hash functions are 3 and corresponding hash values as h1 = 2, h2 = 3 and h3 = 9. Similarly bits at indices 2, 3 and 9 are set to 1.
+Now we add a new element 'data' to the bloom filter. The corresponding hash values are calculated as h1 = 2, h2 = 3 and h3 = 9. Similarly bits at indices 2, 3 and 9 are set to 1.
 
 ![alt text](https://github.com/Clare-Joyce/CDS_Project/blob/main/Figures/image_3.png)
 
@@ -49,11 +49,11 @@ Now we add a new element 'data' to the bloom filter. The calculated optimal hash
 1. Element is hashed through the same hash functions
 2. Identify the position in bit array which needs to be set to 1.
 3. Verify if the positions are already set to 1 in the array
-If any of the positions are set to zero we can make sure that the element is not present in the set, but if all possitions are already set to 1 that are high chances that the element is already a memeber of the set.
+If any of the positions are set to zero we can be sure that the element is not present in the set, but if all possitions are already set to 1 there is a high chance that the element is already a memeber of the set.
 
 # False Positive Rate
 
-While the bloom filter can guarantee that guarantee there is no false negatives that is when a filter says an element is not present, it is definitely not present, however they can produce false positives which means the filter says an element is present but it can be the case that it is not present. The false positive rate, can be computed using bit_array_size, no_of_hash_functions, and capacity which is the number of expected elements to be inserted into the filter.
+While the bloom filter can guarantee that guarantee there are no false negatives (that is when a filter says an element is not present, it is definitely not present), however they can produce false positives which means the filter says an element is present but it is case that it is not present. The false positive rate, can be computed using bit_array_size, no_of_hash_functions, and capacity which is the number of expected elements to be inserted into the filter.
 
 Let us illustrate this with an example, Suppose we want to check if 'pen' is already present or not. The hash value calculated is h1 = 2, h2 = 3 and h3 = 7.
 
@@ -122,7 +122,9 @@ CDS_Project
 
     test_bloom_filter.py : The python test script which contains sample test cases to test the basic functionality of bloom filter.
     
-    jobscript.py : A job script with comments to automate the execution of tasks in high performance coputing (HPC).
+    jobscript_cds.slurm : A job script which runs the execution of tasks in high performance computing (HPC) system.
+
+    slurm-61701863.out: Output from the HPC execution process.
 
 ## Example Run
 This section illustrates how to use the filter
@@ -173,7 +175,7 @@ Though the filter is implemented with take both words and DNA sequences, it was 
 
 ## Results
 
-The functionality on implementation of bloom filter was tested throughly and benchmarked. The testing ensured the basic operations such as insertion and searching works as expected with calculation of optimal number of hash functions by ensuring the minimal false positive rate. The benchmarking allowed to evaluate the efficiency of bloom filter while working with larage scale data sets. The insertion time, checking time and false positive rates were evaluated for increasing input size and increasing number of hash functions. The insertion time and search time showed a linear behaviour with increase in input sizes, indicating a consistent performance at various scales. With increase in hash functions the time insertion and checking time also increased which suggests the optimization required for cases where we have higher high insertion rates. When the optimal number of hash functions increases beyond a threshold level, the false positive rate increases initially and further stabilizes to a constant level. The benchmarking results affirms the scalability and efficiency of our bloom filter implementation in real world applications. However certain limitations like increased insertion time, checking time and false positive rates with increased number of hash functions should be optimized based on the application. The future improvements could be done on optimising the hash function computations and comparison with different variants of Bloom filters.
+The functionality on implementation of bloom filter was tested throughly and benchmarked. The testing ensured the basic operations such as insertion and searching works as expected with calculation of optimal number of hash functions by ensuring the minimal false positive rate. The benchmarking allowed to evaluate the efficiency of bloom filter while working with larage scale data sets. The insertion time, checking time and false positive rates were evaluated for increasing input size and increasing number of hash functions. The insertion time and search time showed a linear behaviour with increase in input sizes, indicating a consistent performance at various scales. With increase in hash functions the time insertion and checking time also increased which suggests the optimization required for cases where we have higher high insertion rates. When the optimal number of hash functions increases beyond a threshold level, the false positive rate increases initially and further stabilizes to a constant level. The benchmarking results demonstrate the functionality of the bloom filter, the efficiency of the filter require some degree of optimization. Certain limitations like increased insertion time, checking time and false positive rates with increased number of hash functions should be optimized based on the application. The future improvements can be done on optimising the hash function computations and comparison with different variants of Bloom filters. Not that in the benchmarking process carried out, predetermined values of the hash functions were used. One way to improve efficiency would be to work with optimal number of hash functions.
 
 ## Resources
 * https://brilliant.org/wiki/bloom-filter/
