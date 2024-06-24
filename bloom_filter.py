@@ -14,6 +14,7 @@ Note:
 
 import math
 import mmh3
+from typing import List
 
 
 class BloomFilter:
@@ -39,7 +40,7 @@ class BloomFilter:
         self.bit_array = [False] * self.m  # Set all cells to False
 
     @property
-    def m(self):
+    def m(self) -> int:
         """Get the value of the m.
 
         Returns:
@@ -48,7 +49,7 @@ class BloomFilter:
         return self.__m
 
     @m.setter
-    def m(self, m):
+    def m(self, m: int) -> None:
         """Set the value of the m.
 
         Note: If the input value is not provided, it calculates
@@ -68,7 +69,7 @@ class BloomFilter:
         self.__m = m
 
     @property
-    def k(self):
+    def k(self) -> int:
         """Get the value of the k.
 
         Returns:
@@ -77,7 +78,7 @@ class BloomFilter:
         return self.__k
 
     @k.setter
-    def k(self, k):
+    def k(self, k: int) -> None:
         """Set the value of the k.
 
         Note: If the input value is not provided, it calculates the
@@ -97,7 +98,7 @@ class BloomFilter:
         self.__k = k
 
     @property
-    def capacity(self):
+    def capacity(self) -> int:
         """
         Get the value of the private attribute __capacity.
 
@@ -107,7 +108,7 @@ class BloomFilter:
         return self.__capacity
 
     @capacity.setter
-    def capacity(self, capacity):
+    def capacity(self, capacity: int) -> None:
         """Set the value of the capacity and check for its validity.
 
         Args:
@@ -121,7 +122,7 @@ class BloomFilter:
         self.__capacity = capacity
 
     @property
-    def fpr(self):
+    def fpr(self) -> float:
         """
         Get the value of the private attribute __fpr (false positive rate).
 
@@ -131,7 +132,7 @@ class BloomFilter:
         return self.__fpr
 
     @fpr.setter
-    def fpr(self, fpr):
+    def fpr(self, fpr: float) -> None:
         """Set the value of the fpr (false positive rate) and check validity.
 
         Args:
@@ -145,7 +146,7 @@ class BloomFilter:
             raise ValueError("False positive rate should be between 0 and 1")
         self.__fpr = fpr
 
-    def insert(self, element: str):
+    def insert(self, element: str) -> List[int]:
         """Adds an element to the filter.
 
         Args:
@@ -161,7 +162,7 @@ class BloomFilter:
             indices.append(index)
         return indices
 
-    def check(self, element: str):
+    def check(self, element: str) -> bool:
         """Checks if an element exists in the filter.
 
         Args:
@@ -203,7 +204,7 @@ class BloomFilter:
         """
         return mmh3.hash(element, seed)
 
-    def calculate_bit_array_size(self):
+    def calculate_bit_array_size(self) -> int:
         """Calculates the optimal bit array size for the filter.
 
         Args:
@@ -219,7 +220,7 @@ class BloomFilter:
                           (math.log(2) ** 2))
         return size_of_bit
 
-    def optimal_hash_functions(self):
+    def optimal_hash_functions(self) -> int:
         """Calculates the optimal number of hash functions for the filter.
 
         Args:
