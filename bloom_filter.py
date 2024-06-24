@@ -40,10 +40,27 @@ class BloomFilter:
 
     @property
     def m(self):
+        """Get the value of the m.
+
+        Returns:
+            int: The current value of the bit array size.
+        """
         return self.__m
 
     @m.setter
     def m(self, m):
+        """Set the value of the m.
+
+        Note: If the input value is not provided, it calculates
+        the bit array size. It also checks if the provided value
+        is valid.
+
+        Args:
+            m (int): The bit array size to be set.
+
+        Raises:
+            ValueError: If the provided value is negative.
+        """
         if not m:
             m = self.calculate_bit_array_size()
         if m < 0:
@@ -52,10 +69,27 @@ class BloomFilter:
 
     @property
     def k(self):
+        """Get the value of the k.
+
+        Returns:
+            int: The current value of the number of hash functions.
+        """
         return self.__k
 
     @k.setter
     def k(self, k):
+        """Set the value of the k.
+
+        Note: If the input value is not provided, it calculates the
+        optimal number of hash functions. It also checks if the
+        provided value is valid.
+
+        Args:
+            k (int): The number of hash functions to be set.
+
+        Raises:
+            ValueError: If the provided value is negative.
+        """
         if not k:
             k = self.optimal_hash_functions()
         if k < 0:
@@ -64,20 +98,49 @@ class BloomFilter:
 
     @property
     def capacity(self):
+        """
+        Get the value of the private attribute __capacity.
+
+        Returns:
+            int: The current value of the capacity.
+        """
         return self.__capacity
 
     @capacity.setter
     def capacity(self, capacity):
+        """Set the value of the capacity and check for its validity.
+
+        Args:
+            capacity (int): The capacity to be set.
+
+        Raises:
+            ValueError: If the provided value is not positive.
+        """
         if capacity <= 0:
             raise ValueError("Capacity should be positive")
         self.__capacity = capacity
 
     @property
     def fpr(self):
+        """
+        Get the value of the private attribute __fpr (false positive rate).
+
+        Returns:
+            float: The current value of the false positive rate.
+        """
         return self.__fpr
 
     @fpr.setter
     def fpr(self, fpr):
+        """Set the value of the fpr (false positive rate) and check validity.
+
+        Args:
+            fpr (float): The false positive rate to be set. It should be
+                between 0 and 1 inclusive.
+
+        Raises:
+            ValueError: If the provided value is not between 0 and 1 inclusive.
+        """
         if not (0 <= fpr <= 1):
             raise ValueError("False positive rate should be between 0 and 1")
         self.__fpr = fpr
