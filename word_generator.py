@@ -1,10 +1,11 @@
 """Generates random words for testing."""
 from faker import Faker
+from typing import List
 
 fake = Faker()
 
 
-def random_word_generator(n):
+def random_word_generator(n: int) -> List[str]:
     """Generates a random set of words.
 
     Args:
